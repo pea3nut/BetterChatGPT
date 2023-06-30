@@ -27,5 +27,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: pea3nut/chat-gpt:$(date +%s)
+        tags: pea3nut/chat-gpt:latest
 
