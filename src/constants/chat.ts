@@ -28,7 +28,7 @@ export const modelOptions: ModelOptions[] = [
   // 'gpt-4-32k-0314',
 ];
 
-export const defaultModel = 'gpt-3.5-turbo';
+export const defaultModel = 'gpt-4';
 
 export const modelMaxToken = {
   'gpt-3.5-turbo': 4096,
@@ -95,6 +95,13 @@ export const modelCost = {
     completion: { price: 0.03, unit: 1000 },
   },
 };
+
+// USD to RMB
+Object.values(modelCost).forEach(obj => {
+  const usd2rmb = 7.25;
+  obj.prompt.price *= usd2rmb;
+  obj.completion.price *= usd2rmb;
+});
 
 export const defaultUserMaxToken = 4000;
 
